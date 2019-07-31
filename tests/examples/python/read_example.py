@@ -70,14 +70,8 @@ if __name__ == '__main__':
     # Use fetchall to fetch data in a list
     data = c1.fetchall()
 
-    try:
-        c1.execute('select * from db.t')
-    except Exception as err:
-        conn.close()
-        raise(err)
-
     # Use iterator to go through the retreived data
-    for col in c1:
+    for col in data:
         print(col)
 
     conn.close()
